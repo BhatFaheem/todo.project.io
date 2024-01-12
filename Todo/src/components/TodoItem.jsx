@@ -30,7 +30,6 @@ function TodoItem({ todo, editTodo, deleteTodo, toggleTodo }) {
       <Checkbox
         checked={todo.isComplete}
         onChange={() => toggleTodo(todo.id)}
-        inputProps={{ "aria-labelledby": `checkbox-list-label-${todo.id}` }}
       />
       {edit ? (
         <>

@@ -18,7 +18,8 @@ function TodoForm({ addTodo }) {
     <>
       <form onSubmit={handleSubmit}></form>
       <Grid container spacing={2} alignItems="center">
-        <Grid item xs={8}>
+        <Grid xs={2}></Grid>
+        <Grid item xs={6}>
           <TextField
             label="Add Todo"
             variant="outlined"
@@ -27,7 +28,7 @@ function TodoForm({ addTodo }) {
             onChange={handleChange}
           />
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={2}>
           <Button
             type="Submit"
             variant="contained"
@@ -38,6 +39,7 @@ function TodoForm({ addTodo }) {
             Add
           </Button>
         </Grid>
+        <Grid xs={2}></Grid>
       </Grid>
     </>
   );
