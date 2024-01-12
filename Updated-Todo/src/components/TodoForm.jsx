@@ -1,24 +1,40 @@
+// Todo Form JSX
 import { Button, Grid, TextField } from "@mui/material";
 import React, { useState } from "react";
-function TodoForm({addTodo}) {
+function TodoForm({ addTodo }) {
   const [todo, setTodo] = useState("");
 
+  const handleChange = (e) => {
+    setTodo(e.target.value);
+  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTodo(e.target.value);
     if (todo.length > 0) {
+      // console.log("Yohooooooo");
       addTodo(todo);
       setTodo("");
     }
   };
+
   return (
     <Grid container spacing={2} alignItems="center" p={2}>
       <Grid item xs={2}></Grid>
       <Grid item xs={6}>
-        <TextField label="Add Todo" variant="outlined" fullWidth value={todo} />
+        <TextField
+          label="Add Todo"
+          variant="outlined"
+          fullWidth
+          value={todo}
+          onChange={handleChange}
+        />
       </Grid>
-      <Grid item xs={4}>
-        <Button variant="contained" onSubmit={handleSubmit}>
+      <Grid item xs={2}>
+        <Button
+          type="Submit"
+          variant="contained"
+          onClick={handleSubmit}
+          color="primary"
+        >
           Add
         </Button>
       </Grid>
