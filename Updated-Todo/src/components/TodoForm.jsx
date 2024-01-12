@@ -1,5 +1,5 @@
 // Todo Form JSX
-import { Button, Grid, TextField } from "@mui/material";
+import { Button, CssBaseline, Grid, TextField } from "@mui/material";
 import React, { useState } from "react";
 function TodoForm({ addTodo }) {
   const [todo, setTodo] = useState("");
@@ -17,29 +17,32 @@ function TodoForm({ addTodo }) {
   };
 
   return (
-    <Grid container spacing={2} alignItems="center" p={2}>
-      <Grid item xs={2}></Grid>
-      <Grid item xs={6}>
-        <TextField
-          label="Add Todo"
-          variant="outlined"
-          fullWidth
-          value={todo}
-          onChange={handleChange}
-        />
+    <>
+      <CssBaseline />
+      <Grid container spacing={2} alignItems="center" p={2}>
+        <Grid item xs={2}></Grid>
+        <Grid item xs={6}>
+          <TextField
+            label="Add Todo"
+            variant="filled"
+            fullWidth
+            value={todo}
+            onChange={handleChange}
+          />
+        </Grid>
+        <Grid item xs={2}>
+          <Button
+            type="Submit"
+            variant="contained"
+            onClick={handleSubmit}
+            color="primary"
+          >
+            Add
+          </Button>
+        </Grid>
+        <Grid item xs={2}></Grid>
       </Grid>
-      <Grid item xs={2}>
-        <Button
-          type="Submit"
-          variant="contained"
-          onClick={handleSubmit}
-          color="primary"
-        >
-          Add
-        </Button>
-      </Grid>
-      <Grid item xs={2}></Grid>
-    </Grid>
+    </>
   );
 }
 

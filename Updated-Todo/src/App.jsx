@@ -3,6 +3,7 @@ import { useState } from "react";
 import "./App.css";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
+import Header from "./components/Header";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -13,9 +14,7 @@ function App() {
 
   const editTodo = (id, newText) => {
     setTodos(
-      todos.map((todo) =>
-        todo.id === id ? [...todo, { text: newText }] : todo
-      )
+      todos.map((todo) => (todo.id === id ? { ...todo, text: newText } : todo))
     );
   };
   const deleteTodo = (id) => {
@@ -24,12 +23,13 @@ function App() {
   const toggleTodo = (id) => {
     setTodos(
       todos.map((todo) =>
-        todo.id === id ? [...todo, { isComplete: !isComplete }] : todo
+        todo.id === id ? { ...todo, isComplete: !todo.isComplete } : todo
       )
     );
   };
   return (
     <>
+      <Header />
       <TodoForm addTodo={addTodo} />
       <TodoList
         todos={todos}
