@@ -31,7 +31,7 @@ function App() {
   return (
     <>
       <Header />
-      <SearchBar />
+      <SearchBar todos={todos} />
       <TodoForm addTodo={addTodo} />
       <TodoList
         todos={todos}
