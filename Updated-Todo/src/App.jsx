@@ -1,9 +1,10 @@
 // APP JSX
 import { useState } from "react";
 import "./App.css";
+import Header from "./components/Header";
+import SearchBar from "./components/SearchBar";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
-import Header from "./components/Header";
 
 function App() {
   const [todos, setTodos] = useState([]);
@@ -30,6 +31,7 @@ function App() {
   return (
     <>
       <Header />
+      <SearchBar />
       <TodoForm addTodo={addTodo} />
       <TodoList
         todos={todos}

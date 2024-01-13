@@ -26,7 +26,6 @@ function TodoForm({ addTodo }) {
         p={2}
         justifyContent={"center"}
       >
-        {/* <Grid item xs={2}></Grid> */}
         <Grid item xs={6}>
           <TextField
             label="Add Todo"
@@ -46,7 +45,6 @@ function TodoForm({ addTodo }) {
             Add
           </Button>
         </Grid>
-        {/* <Grid item xs={2}></Grid> */}
       </Grid>
     </>
   );
