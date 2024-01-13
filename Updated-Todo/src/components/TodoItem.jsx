@@ -5,7 +5,7 @@ import { Checkbox, IconButton, ListItem, TextField } from "@mui/material";
 import React, { useState } from "react";
 function TodoItem({ todo, editTodo, deleteTodo, toggleTodo }) {
   const [edit, setEdit] = useState(false);
-  const [editText, setEditText] = useState("");
+  const [editText, setEditText] = useState(todo.text);
 
   const handleEditText = (e) => {
     setEditText(e.target.value);
