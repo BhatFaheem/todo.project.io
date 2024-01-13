@@ -19,8 +19,14 @@ function TodoForm({ addTodo }) {
   return (
     <>
       <CssBaseline />
-      <Grid container spacing={2} alignItems="center" p={2}>
-        <Grid item xs={2}></Grid>
+      <Grid
+        container
+        spacing={2}
+        alignItems="center"
+        p={2}
+        justifyContent={"center"}
+      >
+        {/* <Grid item xs={2}></Grid> */}
         <Grid item xs={6}>
           <TextField
             label="Add Todo"
@@ -40,7 +46,7 @@ function TodoForm({ addTodo }) {
             Add
           </Button>
         </Grid>
-        <Grid item xs={2}></Grid>
+        {/* <Grid item xs={2}></Grid> */}
       </Grid>
     </>
   );
